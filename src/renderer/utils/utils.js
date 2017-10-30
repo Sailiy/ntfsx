@@ -7,7 +7,14 @@ import {MessageBox} from 'element-ui';
 import {Message} from 'element-ui';
 import {t} from 'element-ui/lib/locale'
 
-var sudoPwd = "";
+var sudoPwd;
+if (localStorage.sudoPwd) {
+    sudoPwd = localStorage.sudoPwd
+} else {
+    sudoPwd = ''
+    localStorage.sudoPwd = ''
+}
+
 function _checkSudoPwd(pwd) {
     return new Promise((resolve, reject) => {
         let s = `echo ${pwd} | sudo -S ls`;
@@ -61,6 +68,7 @@ export async function execShell(shell) {
     while (true) {
         try {
             await _checkSudoPwd(sudoPwd);
+            localStorage.sudoPwd=sudoPwd;
             break
         } catch (e) {
             Message({

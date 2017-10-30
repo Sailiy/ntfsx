@@ -28,7 +28,7 @@
         },
         data () {
             return {
-                activeTab: 'tab2',
+                activeTab: 'tab1',
             }
         },
         mounted(){

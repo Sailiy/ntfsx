@@ -36,10 +36,10 @@
 如果遇到问题，请先检查这些工具是否工作正常。
                    <br>
 该项目已经在github上开源，欢迎开发者加入，完善功能。
-Github地址：
+Github地址：<a href="javascript:void(0)" @click="open('https://github.com/Sailiy/ntfsx')">https://github.com/Sailiy/ntfsx</a>
                    <br>
 我的能力不仅仅如此，如果你能给我提供好的工作机会,
-请发邮件到：sailiy@126.com
+请发邮件到：<a href="mailto:sailiy@126.com">sailiy@126.com</a>
                    <br>
 感谢electron，vue，electron-vue，muse-ui，element-ui的开发者们。
                </pre>
@@ -75,10 +75,10 @@ Github地址：
 The project relies on the Mac system diskutil, mount, umount, mount_ntfs, open, command line tool,If you have problems, check to see if these tools are working properly.
                    <br>
 The project has been open source on github and welcomes developers to join and improve functionality.
-Making address:
+Making address: <a href="javascript:void(0)" @click="open('https://github.com/Sailiy/ntfsx')">https://github.com/Sailiy/ntfsx</a>
                    <br>
 My ability is not only that, if you can give me good job opportunities.
-Please email to: sailiy@126.com
+Please email to: <a href="mailto:sailiy@126.com">sailiy@126.com</a>
                    <br>
 Thanks to the developers of electron, vue, electronic-vue, Muse-UI, element-UI.
                </pre>
@@ -97,7 +97,11 @@ Thanks to the developers of electron, vue, electronic-vue, Muse-UI, element-UI.
                 dialog: false
             }
         },
-        methods: {}
+        methods: {
+            open(link){
+                this.$electron.shell.openExternal(link);
+            }
+        }
     }
 </script>
 

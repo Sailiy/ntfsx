@@ -17,7 +17,7 @@ if (localStorage.sudoPwd) {
 
 function _checkSudoPwd(pwd) {
     return new Promise((resolve, reject) => {
-        let s = `echo ${pwd} | sudo -S ls`;
+        let s = `echo "${pwd}" | sudo -S ls`;
         exec(s, (error, stdout, stderr) => {
             if (error) {
                 reject(error)
@@ -51,7 +51,7 @@ function _getSudoPwd() {
 
 function _execShell(shell) {
     return new Promise((resolve, reject) => {
-        let s = `echo ${sudoPwd} | sudo -S ${shell}`;
+        let s = `echo "${sudoPwd}" | sudo -S ${shell}`;
         exec(s, (error, stdout, stderr) => {
             if (error) {
                 reject(error)
@@ -84,7 +84,7 @@ export async function execShell(shell) {
 
 export function getDevices() {
     return new Promise((resolve, reject) => {
-        execShell('mount | grep ntfs').then(async (res) => {
+        execShell(`mount | grep ntfs`).then(async (res) => {
             var devicesList = []
             var v = res
                 .split("\n")
@@ -126,7 +126,7 @@ export function getDevices() {
 
 export function openInFinder(path) {
     return new Promise((resolve, reject) => {
-        execShell('open ' + path).then((res) => {
+        execShell(`open "${path}"`).then((res) => {
             resolve()
         }).catch((e) => {
             console.log(e);
@@ -138,9 +138,9 @@ export function openInFinder(path) {
 export function mountDevices(mount_path, link_path) {
     return new Promise(async (resolve, reject) => {
         try {
-            await execShell('umount ' + mount_path);
-            await execShell('mkdir -p ' + link_path);
-            await execShell(`mount_ntfs -o rw,auto,nobrowse,noowners,noatime  ${mount_path} ${link_path}`);
+            await execShell(`umount "${mount_path}"`);
+            await execShell(`mkdir -p "${link_path}"`);
+            await execShell(`mount_ntfs -o rw,auto,nobrowse,noowners,noatime  "${mount_path}" "${link_path}"`);
             resolve();
         } catch (e) {
             reject(e)

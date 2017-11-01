@@ -5,7 +5,7 @@
 
 ![](/screen/mount_open.gif)
 
-![](/screens/language.gif)
+![](/screen/language.gif)
 
 #### 资源地址
 

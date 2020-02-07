@@ -12,10 +12,7 @@
 官方文档地址：[http://www.rainx.org/2017/10/30/ntfs4mac](http://www.rainx.org/2017/10/30/ntfs4mac)
 
 DMG下载地址：
-
-百度网盘： [https://pan.baidu.com/s/1skTMrU1](https://pan.baidu.com/s/1skTMrU1) 密码:dxmr
-
-备用地址：[https://pan.baidu.com/share/init?surl=skTMrU1](https://pan.baidu.com/share/init?surl=skTMrU1) 密码:dxmr
+百度网盘： [https://pan.baidu.com/s/1o7f7_u_AZtknFxrNtHZvmg](https://pan.baidu.com/s/1o7f7_u_AZtknFxrNtHZvmg) 密码:y5m3
 
 #### Build Setup
 
